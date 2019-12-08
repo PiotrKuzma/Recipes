@@ -1,29 +1,30 @@
 
 import React, { useEffect, useState } from 'react';
 import Recipe from "./components/Recipe/Recipe"
+import {ReactComponent as Icon } from './img/spoon-knife.svg'
 
 
-import './App.css';
+import './App.style.scss'
 
 
 const App = () => {
 
-  const APP_ID = "d6cbc94d"
-  const KEY = "ab92dfb681356353ec97d41bf84211ec"
+  const APP_ID = "ccaa1f56"
+  const KEY = "015189345f20b91784cd3f2da7d27ea7"
   const [ recipe, setRecipe ] = useState([])
   const [searchVal, setSearchVal ] = useState('')
-  const [query, setQuery ] = useState("chicken")
+  const [query, setQuery ] = useState("coconut")
 
-  useEffect( () => {
-    fetchfood()
-  }, [query])
+   useEffect( () => {
+     fetchfood()
+    }, [query])
 
-  const fetchfood = async () => {
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${KEY}`)
-    const data = await response.json()
+   const fetchfood = async () => {
+     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${KEY}`)
+      const data = await response.json()
     setRecipe(data.hits)
     console.log(data.hits)
-  }
+   }
 
   const updateData = e => {
     setSearchVal(e.target.value)
@@ -34,27 +35,86 @@ const App = () => {
     setQuery(searchVal)
     setSearchVal('')
   }
+  if (recipe.length > 0) {
+    
+    return(
+      <div className="wrapper">
+        <header className="header">
+          <div className="logo-container">
+           <Icon className="logo-container__logo"/>
+          </div>
+          <h1 className="header__title">Crazy Spoons</h1>
+          <p className="header__text">Welcome to Crazy Spoons, a place where You can fetch ideas for Your next meals and drinks. 
+          It's free and very simple to use - just type below and discover new recipes.</p>
+        
+        </header>
+        <section className="form-board">
+          <form onSubmit={getData} className="form">
+            <input type="text" className="form__input" value={searchVal} onChange={updateData}></input>
+            <button className="search-button">Search</button>
+          </form>
+        </section>
+  
+  
+        <section className="recipe-board">
+  
+        {
+         
+          recipe.map(recipe => (
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+            time={recipe.recipe.totalTime}
+            
+          />
+        ))}
+        </section>
+        <footer className="footer">
+        <p className="footer__copy">Copyright &copy; 2019 Piotr Kuźma</p>
+        <p className="footer__copy">External API from edamam.com</p>
+        </footer>
+      </div>
+  
+    )
 
-  return(
-    <div className="App">
-      <form onSubmit={getData}>
-        <input type="text" className="form" value={searchVal} onChange={updateData}></input>
-        <button className="search-button">Search</button>
-      </form>
-
-      {recipe.map(recipe => (
-        <Recipe
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-          time={recipe.recipe.totalTime}
-          
-        />
-      ))}
-    </div>
-
-  )
+  } else {
+    
+    //No Recipe component 
+    return(
+      <div className="wrapper">
+        <header className="header">
+          <a href="/">
+          <div className="logo-container">
+           <Icon className="logo-container__logo"/>
+          </div>
+          </a>
+          <h1 className="header__title">Crazy Spoons</h1>
+          <p className="header__text">Welcome to Crazy Spoons, a place where You can fetch ideas for Your next meals and drinks. 
+          It's free and very simple to use - just type below and discover new recipes.</p>
+        
+        </header>
+        <section className="form-board">
+          <form onSubmit={getData} className="form">
+            <input type="text" className="form__input" value={searchVal} onChange={updateData}></input>
+            <button className="search-button">Search</button>
+          </form>
+        </section>
+  
+  
+        <section className="recipe-board">
+          <p className="recipe-board__failed">Try searching for something else ;)</p>
+        </section>
+        <footer className="footer">
+        <p className="footer__copy">Copyright &copy; 2019 Piotr Kuźma</p>
+        <p className="footer__copy">External API from edamam.com</p>
+        </footer>
+      </div>
+  
+    )
+  }
+ 
 }
 
 export default App

@@ -1,0 +1,210 @@
+$fade: #1F2605;
+$grass: #1F6521;
+$limon: #53900F;
+$sand: #A4A71E;
+$sun: #d6ce15;
+
+
+
+*,
+*::after,
+*::before {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    
+
+
+    .wrapper {
+        max-width: 95rem;
+        margin: 0 auto;
+       
+
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-image: linear-gradient(to right bottom,
+            rgba(white, 1),
+            rgba($sand, 0.1)),
+            url(./img/fruits.jpg);
+            background-size: cover;
+            clip-path: polygon(0 8%, 100% 0%, 100% 92%, 0% 100%);
+            margin-bottom: 1.5rem;
+
+            
+
+            .logo-container {
+                width: 7rem;
+                height: 5rem;
+                padding-top: 2rem;
+                
+                margin-bottom: 1rem;
+                transform: rotate(45deg);
+
+                &__logo {
+                    transform: scale(1.5);
+                    width: 8rem;
+                    fill: $grass;
+                }
+            }
+
+            &__title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                background-image: linear-gradient(to right bottom,
+                rgba($fade, 0.9),
+                rgba($limon, 0.9));
+
+                display: inline-block;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+
+            }
+
+            &__text {
+                width: 20rem;
+                text-align: justify;
+                margin-bottom: 1rem;
+                color: black;
+                font-weight: 700;
+                font-size: 1rem;
+               
+
+                @media only screen and (max-width:360px) {
+
+                    width: 16rem;
+                    
+                    
+            
+                  }
+            }
+
+        }
+
+        .form-board {
+
+            margin: 0 auto;
+            width: 20rem;
+            
+
+            .form {
+                width: 20rem;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+
+                &__input {
+
+                    font-family: Lato, sans-serif;
+                    color: inherit;
+                    font-size: 1rem;
+                    padding: 0.5rem;
+                    border-radius: 0.3rem;
+                    background-color: rgba($limon, 0.5);
+                    border: none;
+                    border-bottom: 3px solid transparent;
+                    width: 75%;
+                    display: block;
+                    margin-bottom: 1rem;
+
+                }
+
+                .search-button {
+                    min-width: 3rem;
+                    border-radius: 1rem;
+                    outline: none;
+                    height: 2.5rem;
+                    letter-spacing: 0.5px;
+                    line-height: 2rem;
+                    padding: 0 35px 0 35px;
+                    
+                    background-color: rgba($limon, 0.8);
+                    color: white;
+                    
+                    font-family: Lato;
+                    font-weight: bolder;
+                    border: none;
+                    cursor: pointer;
+                    margin-bottom:1.3rem;
+                    transition: all 0.1s linear;
+                  
+                    &:active {
+                        position:relative;
+                        top:1px;
+                    }
+                    &:hover {
+                        box-shadow: 0px 5px 5px -7px $fade;
+                        color: $fade;
+                        background-image: linear-gradient(to right bottom,
+                        rgba($sun, 1),
+                        rgba($limon, 1));
+                    }
+
+
+                }
+            }
+
+        }
+
+        .recipe-board {
+            
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            padding: 2rem;
+            font-family: Lato;
+            
+            justify-content: center;
+
+            &__failed {
+
+                height: 30rem;
+                display: block;
+                font-size: 1.2rem;
+                font-weight: 700;
+                font-family: Lato;
+                background-image: linear-gradient(to right bottom,
+                rgba($fade, 0.9),
+                rgba($limon, 0.9));
+
+                display: inline-block;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -moz-background-clip: text;
+                color: transparent;
+                
+            }
+
+        }
+
+        .footer {
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-flow: row wrap;
+            &__copy {
+                display: block;
+                margin: auto;
+                width: auto;
+                font-size: 0.8rem;
+
+            }
+
+        }
+    
+
+        
+    }
+}
