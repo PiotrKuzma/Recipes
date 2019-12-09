@@ -9,19 +9,21 @@ import './App.style.scss'
 
 const App = () => {
 
+  //This should be hidden as env variables in the future
   const APP_ID = "ccaa1f56"
   const KEY = "015189345f20b91784cd3f2da7d27ea7"
+  
   const [ recipe, setRecipe ] = useState([])
   const [searchVal, setSearchVal ] = useState('')
-  const [query, setQuery ] = useState("coconut")
+  const [query, setQuery ] = useState("leek")
 
-   useEffect( () => {
-     fetchfood()
+  useEffect( () => {
+    fetchfood()
     }, [query])
 
    const fetchfood = async () => {
      const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${KEY}`)
-      const data = await response.json()
+     const data = await response.json()
     setRecipe(data.hits)
     console.log(data.hits)
    }

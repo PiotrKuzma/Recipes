@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Functionality
+
+This App allows to make API calls to edamam.com, to get a list of recipes, that can be found with desired ingredient.
+Since it's a free plan, API provider allows to make 5 requests per minute - if exceeded, the App will stop searching for recipes for 5 minutes.
+
+## Development
+
+Application is made of total 2 main react components and stylesheets pre-coded in SASS.
+There are hooks used for state management. API key and ID are not env. variables in this version, but it will be
+improved along with knowledge gathering and commercial approach in the future.
+
+
 ## Available Scripts
 
 In the project directory, you can run:

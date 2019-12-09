@@ -36,8 +36,9 @@ body {
             background-image: linear-gradient(to right bottom,
             rgba(white, 1),
             rgba($sand, 0.1)),
-            url(./img/fruits.jpg);
+            url(./img/por.jpg);
             background-size: cover;
+            background-position: center;
             clip-path: polygon(0 8%, 100% 0%, 100% 92%, 0% 100%);
             margin-bottom: 1.5rem;
 
