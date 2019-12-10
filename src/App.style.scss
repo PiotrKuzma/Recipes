@@ -39,6 +39,7 @@ body {
             url(./img/por.jpg);
             background-size: cover;
             background-position: center;
+            
             clip-path: polygon(0 8%, 100% 0%, 100% 92%, 0% 100%);
             margin-bottom: 1.5rem;
 
@@ -55,16 +56,17 @@ body {
                 &__logo {
                     transform: scale(1.5);
                     width: 8rem;
-                    fill: $grass;
+                    fill: #414141;
                 }
             }
 
             &__title {
                 font-size: 2rem;
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
+                font-weight: 500;
                 background-image: linear-gradient(to right bottom,
                 rgba($fade, 0.9),
-                rgba($limon, 0.9));
+                rgba(#414141, 0.9));
 
                 display: inline-block;
                 -webkit-background-clip: text;
@@ -77,9 +79,9 @@ body {
             &__text {
                 width: 20rem;
                 text-align: justify;
-                margin-bottom: 1rem;
-                color: black;
-                font-weight: 700;
+                margin-bottom: 2rem;
+                color: #414141;
+                font-weight: 600;
                 font-size: 1rem;
                
 
@@ -99,6 +101,7 @@ body {
             margin: 0 auto;
             width: 20rem;
             
+          
 
             .form {
                 width: 20rem;
@@ -113,12 +116,20 @@ body {
                     font-size: 1rem;
                     padding: 0.5rem;
                     border-radius: 0.3rem;
-                    background-color: rgba($limon, 0.5);
+                    outline: 2px solid $limon;
                     border: none;
                     border-bottom: 3px solid transparent;
+                    
                     width: 75%;
                     display: block;
                     margin-bottom: 1rem;
+                    
+                    &::placeholder {
+
+                        text-align: center;
+                        font-family: Lato, sans-serif;
+                        color: #414141;
+                    }
 
                 }
 
@@ -136,6 +147,7 @@ body {
                     
                     font-family: Lato;
                     font-weight: bolder;
+                    font-size: 1rem;
                     border: none;
                     cursor: pointer;
                     margin-bottom:1.3rem;
@@ -147,7 +159,7 @@ body {
                     }
                     &:hover {
                         box-shadow: 0px 5px 5px -7px $fade;
-                        color: $fade;
+                       
                         background-image: linear-gradient(to right bottom,
                         rgba($sun, 1),
                         rgba($limon, 1));

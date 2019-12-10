@@ -22,11 +22,11 @@ const App = () => {
     }, [query])
 
    const fetchfood = async () => {
-     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${KEY}`)
-     const data = await response.json()
+    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${KEY}`)
+    const data = await response.json()
     setRecipe(data.hits)
-    console.log(data.hits)
-   }
+   console.log(data.hits)
+     }
 
   const updateData = e => {
     setSearchVal(e.target.value)
@@ -46,13 +46,17 @@ const App = () => {
            <Icon className="logo-container__logo"/>
           </div>
           <h1 className="header__title">Crazy Spoons</h1>
-          <p className="header__text">Welcome to Crazy Spoons, a place where You can fetch ideas for Your next meals and drinks. 
-          It's free and very simple to use - just type below and discover new recipes.</p>
+          <p className="header__text">Welcome to Crazy Spoons, a place where You can fetch ideas
+          for Your next meals and drinks. Type ingredient below and discover new recipes.
+          </p>
         
         </header>
         <section className="form-board">
+         
           <form onSubmit={getData} className="form">
-            <input type="text" className="form__input" value={searchVal} onChange={updateData}></input>
+            <input type="text" className="form__input" value={searchVal} onChange={updateData}
+            placeholder="ingredient"
+            ></input>
             <button className="search-button">Search</button>
           </form>
         </section>
@@ -93,13 +97,17 @@ const App = () => {
           </div>
           </a>
           <h1 className="header__title">Crazy Spoons</h1>
-          <p className="header__text">Welcome to Crazy Spoons, a place where You can fetch ideas for Your next meals and drinks. 
-          It's free and very simple to use - just type below and discover new recipes.</p>
+          <p className="header__text">Welcome to Crazy Spoons, a place where You can fetch ideas for Your
+           next meals and drinks. Type ingredient below and discover new recipes.
+          </p>
         
         </header>
         <section className="form-board">
+         
           <form onSubmit={getData} className="form">
-            <input type="text" className="form__input" value={searchVal} onChange={updateData}></input>
+            <input type="text" className="form__input" value={searchVal} onChange={updateData}
+              placeholder="ingredient"
+            ></input>
             <button className="search-button">Search</button>
           </form>
         </section>
