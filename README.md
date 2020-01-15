@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Functionality
 
-This App allows to make API calls to edamam.com, to get a list of recipes, that can be found with desired ingredient.
+This App allows to make API calls to edamam.com, to get a list of recipes.
 Since it's a free plan, API provider allows to make 5 requests per minute - if exceeded, the App will stop searching for recipes for 5 minutes.
 
 ## Development
