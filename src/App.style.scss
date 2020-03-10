@@ -118,7 +118,8 @@ body {
                     border-radius: 0.3rem;
                     outline: 2px solid $limon;
                     border: none;
-                    border-bottom: 3px solid transparent;
+                    border-bottom: 2px solid transparent;
+                    
                     
                     width: 75%;
                     display: block;
@@ -150,7 +151,7 @@ body {
                     cursor: pointer;
                     margin-bottom: 1.3rem;
                     transition: all 0.15s ease-in-out;
-                  
+                    
                     &:active {
                         transform: translateY(2px)
                     }

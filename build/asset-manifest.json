@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.95365c23.chunk.css",
+    "main.css": "/static/css/main.013207ba.chunk.css",
     "main.js": "/static/js/main.57eeb79e.chunk.js",
     "main.js.map": "/static/js/main.57eeb79e.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.fa463cfa.js",
@@ -8,9 +8,9 @@
     "static/js/2.3bacdb9e.chunk.js": "/static/js/2.3bacdb9e.chunk.js",
     "static/js/2.3bacdb9e.chunk.js.map": "/static/js/2.3bacdb9e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.8d5ddff0509029218e3d03233503702b.js": "/precache-manifest.8d5ddff0509029218e3d03233503702b.js",
+    "precache-manifest.c8df7b957257c036ef861ffff5561024.js": "/precache-manifest.c8df7b957257c036ef861ffff5561024.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.95365c23.chunk.css.map": "/static/css/main.95365c23.chunk.css.map",
+    "static/css/main.013207ba.chunk.css.map": "/static/css/main.013207ba.chunk.css.map",
     "static/media/App.style.scss": "/static/media/por.432ce6e3.jpg",
     "static/media/spoon-knife.8496089b.svg": "/static/media/spoon-knife.8496089b.svg"
   }
