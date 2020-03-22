@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Recipe from "./components/Recipe/Recipe"
 import {ReactComponent as Icon } from './img/spoon-knife.svg'
+import Loader from './components/Loader/Loader';
 
 
 import './App.style.scss'
@@ -16,16 +17,19 @@ const App = () => {
   const [ recipe, setRecipe ] = useState([])
   const [searchVal, setSearchVal ] = useState('')
   const [query, setQuery ] = useState("leek")
+  const [loading, setLoading ] = useState(false)
 
   useEffect( () => {
     fetchfood()
     }, [query])
 
    const fetchfood = async () => {
+    setLoading(true)
     const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${KEY}`)
     const data = await response.json()
     setRecipe(data.hits)
-   console.log(data.hits)
+    setLoading(false)
+   
      }
 
   const updateData = e => {
@@ -37,9 +41,11 @@ const App = () => {
     setQuery(searchVal)
     setSearchVal('')
   }
+ 
   if (recipe.length > 0) {
     
     return(
+     
       <div className="wrapper">
         <header className="header">
           <div className="logo-container">
@@ -60,10 +66,11 @@ const App = () => {
             <button className="search-button">Search</button>
           </form>
         </section>
-  
-  
+        {loading? (
+        <Loader/>) : (
+        
         <section className="recipe-board">
-  
+         
         {
          
           recipe.map(recipe => (
@@ -76,7 +83,7 @@ const App = () => {
             
           />
         ))}
-        </section>
+        </section>)}
         <footer className="footer">
         <p className="footer__copy">Copyright &copy; 2019 Piotr Kuźma</p>
         <p className="footer__copy">External API from edamam.com</p>
